@@ -59,6 +59,9 @@ public class BatteryMeterView extends ImageView implements
         // The BatteryMeterDrawable wants to use the clear xfermode,
         // so use a separate layer to not make it clear the background with it.
         setLayerType(View.LAYER_TYPE_HARDWARE, null);
+
+        mContext = context;
+        mFrameColor = frameColor;
     }
 
     @Override
@@ -109,5 +112,30 @@ public class BatteryMeterView extends ImageView implements
 
     public void setDarkIntensity(float f) {
         mDrawable.setDarkIntensity(f);
+    }
+
+    private void updateBatteryStyle(String styleStr) {
+        final int style = styleStr == null ?
+                BatteryMeterDrawable.BATTERY_STYLE_PORTRAIT : Integer.parseInt(styleStr);
+
+        switch (style) {
+            case BatteryMeterDrawable.BATTERY_STYLE_TEXT:
+            case BatteryMeterDrawable.BATTERY_STYLE_HIDDEN:
+                setVisibility(View.GONE);
+                setImageDrawable(null);
+                break;
+            default:
+                mDrawable = new BatteryMeterDrawable(mContext, new Handler(), mFrameColor, style);
+                setImageDrawable(mDrawable);
+                setVisibility(View.VISIBLE);
+                break;
+        }
+        restoreDrawableAttributes();
+        requestLayout();
+    }
+
+    private void restoreDrawableAttributes() {
+        mDrawable.setBatteryController(mBatteryController);
+        mDrawable.startListening();
     }
 }
