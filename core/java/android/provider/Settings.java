@@ -3866,11 +3866,17 @@ public final class Settings {
             }
         };
 
-        /**
+         /**
          * Use Dnd when call active
          * @hide
          */
         public static final String DND_WHEN_CALL = "dnd_when_call";
+
+        /**
+         * Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
