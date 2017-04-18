@@ -21,8 +21,6 @@
   <java-symbol type="integer" name="config_buttonBrightnessSettingMaximum" />
   <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
 
-  <!-- Whether notify fingerprint client of successful cancelled authentication -->
-  <java-symbol type="bool" name="config_notifyClientOnFingerprintCancelSuccess" />
 
   <!-- Hardware Keys Default Constants  -->
   <java-symbol type="integer" name="config_deviceHardwareKeys" />
@@ -42,10 +40,6 @@
   <!-- Package Manager -->
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
-
-  <!-- We don't want to publish private symbols in android.R as part of the
-       SDK.  Instead, put them here. -->
-  <private-symbols package="com.android.internal" />
 
   <!-- Notification and battery light -->
   <java-symbol type="bool" name="config_adjustableNotificationLedBrightness" />
