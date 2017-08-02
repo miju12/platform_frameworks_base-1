@@ -42,10 +42,12 @@ public class FlashlightController {
 
     private static final int DISPATCH_ERROR = 0;
     private static final int DISPATCH_CHANGED = 1;
-    private static final int DISPATCH_AVAILABILITY_CHANGED = 2;
+    private static final int DISPATCH_AVAILABILITY_CHANGE=2:
+    private static final String ACTION_TURN_FLASHLIGHT_OFF =
+            "com.android.systemui.action.TURN_FLASHLIGHT_OFF";
 
     private final CameraManager mCameraManager;
-    private final Context mContext;
+    
     /** Call {@link #ensureHandler()} before using */
     private Handler mHandler;
 

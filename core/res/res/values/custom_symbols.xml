@@ -58,19 +58,4 @@
 
   <!-- LED pulse -->
   <java-symbol type="bool" name="config_ledCanPulse" />
-
-  <!-- Doze mode -->
-  <java-symbol type="bool" name="config_doze_enabled_by_default" />
-
-  <!-- Common boost params -->
-  <java-symbol type="array" name="qboost_strong_param_value" />
-  <java-symbol type="array" name="qboost_weak_param_value" />
-
-  <!-- cpu boost on boot -->
-  <java-symbol type="integer" name="onbootboost_duration" />
-  <java-symbol type="array" name="onbootboost_param_value" />
-
-  <!-- FP unlock Boost -->
-  <java-symbol type="integer" name="fpunlockboost_duration" />
-
 </resources>
